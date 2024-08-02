@@ -1,0 +1,49 @@
+plugins {
+    id "java"
+    id "org.springframework.boot" version "3.2.2"
+    id "io.spring.dependency-management" version "1.1.4"
+}
+
+group = "org.boot"
+version = "0.0.1-SNAPSHOT"
+
+java {
+    sourceCompatibility = "17"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter:3.2.2"
+    implementation "org.springframework.boot:spring-boot-starter-web:3.2.2"
+    implementation "org.springframework.boot:spring-boot-starter-web-services:3.2.2"
+    implementation "org.springframework.boot:spring-boot-starter-logging:3.2.2"
+    implementation "org.springframework.boot:spring-boot-starter-thymeleaf:3.2.2"
+
+    implementation "org.springframework.boot:spring-boot-starter-jdbc:3.2.5"
+
+    //     mysql 데이터베이스에 연결하기 위한 JDBC 드라이버
+    implementation 'mysql:mysql-connector-java:8.0.30'
+
+//     MyBatis와 연동을 위한 SpringBoot의 Starter 의존성 패키지
+    implementation "org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3"
+
+    // Lombok을 컴파일 타임에만 사용하고 런타임에는 포함하지 않음
+    compileOnly "org.projectlombok:lombok:1.18.32"
+// Lombok 어노테이션 프로세서를 컴파일 시 사용
+    annotationProcessor "org.projectlombok:lombok:1.18.32"
+// 테스트 코드를 컴파일할 때만 Lombok을 사용하고 테스트 실행 시에는 포함하지 않음
+    testCompileOnly "org.projectlombok:lombok:1.18.32"
+// 테스트 코드의 컴파일 시 Lombok 애노테이션 프로세서를 사용
+    testAnnotationProcessor "org.projectlombok:lombok:1.18.32"
+
+    implementation "com.google.code.gson:gson:2.10.1"
+
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
+}
+
+tasks.named("test") {
+    useJUnitPlatform()
+}
