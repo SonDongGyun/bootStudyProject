@@ -1,40 +1,33 @@
-import React,{ useState} from 'react';
 import {Button ,Form} from 'react-bootstrap';
+import axios from 'axios';
+
 
 const Write = () => {
-  const [post , setPost] = useState();
+  function selectData(){
+    const userName = document.getElementById("userName");
+    const contents = document.getElementById('contents')
+    console.log(userName);
+    console.log(contents);
+    console.log(userName.value);
+    console.log(contents.value);
 
-  const changeValue = (e) =>{
-    setPost({
-      ...post,
-      [e.target.name] : e.target.value,
-    });
-  };
-
-  const submitPost = (e)=>{
-    e.preventDefault();
-    fetch('http://localhost:9191/postReact',{
-      method :'POST',
-      headers : {
-        'Content-Type' : 'application/json; charset-utf-8',
-      },
-      body:JSON.stringify(post),
-    })
-      .then((res) => res.json())
-      .then((res) => console.log(res));
+    axios.post('http://localhost:9191/testData',["가","나","다"])
+      .then(function (res){
+        console.log(res)
+      });
   };
   return (
-    <Form onSubmit={submitPost}>
+    <div>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Label>제목</Form.Label>
-        <Form.Control name="title" onChange={changeValue} />
+        <Form.Control id="userName"/>
       </Form.Group>
       <Form.Group className="mb-3">
         <Form.Label>내용</Form.Label>
-        <Form.Control as="textarea" rows={3} name="contents" onChange={changeValue} />
+        <Form.Control as="textarea" rows={3} id="contents"/>
       </Form.Group>
-      <Button type="submit">글쓰기</Button>
-    </Form>
+      <Button onClick={()=>selectData()}>글쓰기</Button>
+    </div>
   );
 };
 

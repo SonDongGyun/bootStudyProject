@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import PostItem from '../components/PostItem';
 
 const List = () => {

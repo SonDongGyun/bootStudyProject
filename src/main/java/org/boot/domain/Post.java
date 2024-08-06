@@ -32,5 +32,4 @@ public class Post {
         this.contents = contents;
     }
 
-
 }
