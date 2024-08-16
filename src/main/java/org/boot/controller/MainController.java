@@ -1,13 +1,16 @@
 package org.boot.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
-@RequestMapping("/")
+@Controller
 public class MainController {
-    @GetMapping("check")
+    @GetMapping("/temp")
     public String check() {
-        System.out.println(22222222);
-        return "Success";
+        return "index";
+    }
+    @GetMapping("/test")
+    public String test() {
+        return "test";
     }
 }

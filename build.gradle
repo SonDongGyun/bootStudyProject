@@ -21,14 +21,16 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-web-services:3.2.2"
     implementation "org.springframework.boot:spring-boot-starter-logging:3.2.2"
     implementation "org.springframework.boot:spring-boot-starter-thymeleaf:3.2.2"
+    implementation "org.springframework.boot:spring-boot-devtools"
 
-    implementation "org.springframework.boot:spring-boot-starter-jdbc:3.2.5"
+   // implementation "org.springframework.boot:spring-boot-starter-jdbc:3.2.5"
 
     //     mysql 데이터베이스에 연결하기 위한 JDBC 드라이버
-    implementation 'mysql:mysql-connector-java:8.0.30'
+    //implementation 'mysql:mysql-connector-java:8.0.30'
 
 //     MyBatis와 연동을 위한 SpringBoot의 Starter 의존성 패키지
-    implementation "org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3"
+//    implementation "org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3"
+
     implementation 'org.springframework.boot:spring-boot-starter-security'
 
     // Lombok
@@ -47,13 +49,13 @@ dependencies {
     testImplementation "org.springframework.boot:spring-boot-starter-test"
 
     // JPA
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-
+//    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+//
     implementation group: 'org.springframework.security', name: 'spring-security-oauth2-client', version: '5.6.3'
     testImplementation 'org.springframework.security:spring-security-test'
-    implementation 'io.jsonwebtoken:jjwt:0.9.1'
-
-    implementation 'com.jcraft:jsch:0.1.55'
+//    implementation 'io.jsonwebtoken:jjwt:0.9.1'
+//
+//    implementation 'com.jcraft:jsch:0.1.55'
 }
 
 tasks.named("test") {
