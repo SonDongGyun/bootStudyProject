@@ -57,7 +57,7 @@ public class SshTunnelingInitializer {
             log.info("complete creating ssh session");
 
             log.info("start connecting ssh connection");
-
+            session.connect();
             log.info("success connecting ssh connection ");
 
             // 로컬pc의 남는 포트 하나와 원격 접속한 pc의 db포트 연결
@@ -66,15 +66,13 @@ public class SshTunnelingInitializer {
             System.out.println(666666666);
             System.out.println(forwardedPort);
             log.info("successfully connected to database");
-            session.connect();  // ssh 연결
-            System.out.println(7777777);
+
         } catch (JSchException e){
-            System.out.println(8888888);
             this.closeSSH();
             e.printStackTrace();
             log.error("fail to make ssh tunneling : {}", e.getMessage());
         }
-        System.out.println(9999999);
+
         return forwardedPort;
     }
 }

@@ -45,5 +45,4 @@ public class SshDataSourceConfig {
                 .driverClassName(driverClassName)
                 .build();
     }
-
 }
