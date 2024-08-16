@@ -1,0 +1,11 @@
+.contentLayout{
+  /*모바일 흐름장에서 볼 때 주소창과 네이게이션과의
+    높이는 고려하지 않고 계산이 되어서,
+    불필요한 스크롤이 생기기 때문이다.*/
+  width: 100vw; // heigth는 100vh로 쓰지 않는다.
+  height: calc(var(--vh,1vh)*100); // var() : Css변수를 가져오고, 값이 없을경우 기본값으로 1vh를 사용.
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  background-color: #eee;
+}
